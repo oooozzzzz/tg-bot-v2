@@ -1,7 +1,7 @@
 export const data = [
 	{
 		id: "1a1f0952-a094-4f23-8a62-92907d5c628a",
-		label: "привет",
+		label: "квартира",
 		authorId: "762569950",
 		records: [
 			{
@@ -36,7 +36,7 @@ export const data = [
 	},
 	{
 		id: "1a1f0952-a094-4f23-8a62-92907d5c628a",
-		label: "пока",
+		label: "продукты",
 		authorId: "762569950",
 		records: [
 			{
@@ -71,7 +71,7 @@ export const data = [
 	},
 	{
 		id: "36e0c68c-385a-4b1b-8c64-58cc0a73f7f2",
-		label: "продукты",
+		label: "здоровье",
 		authorId: "762569950",
 		records: [
 			{

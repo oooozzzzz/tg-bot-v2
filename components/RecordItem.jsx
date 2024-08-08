@@ -4,12 +4,9 @@ import { DeleteRecord } from './DeleteRecords'
 
 function RecordItem({ amount, comment }  ) {
 	return (
-		<div className='w-full text-xl font-extralight my-5 p-3 flex justify-between border-primary rounded-lg border'>
-			<span className='font-light'>{amount}</span>
+		<div className='w-full text-xl font-extralight my-5 p-3 flex justify-between items-center border-primary rounded-lg border'>
+			<span className='font-light ml-3'>{amount}</span>
 			<span className='italic font-'>{comment}</span>
-			{/* <button>
-				<Trash2 strokeWidth={'1.5px'} color='#f04343'/>
-			</button> */}
 			<DeleteRecord/>
 		</div>
 	)
