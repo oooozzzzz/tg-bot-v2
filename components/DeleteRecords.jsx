@@ -19,7 +19,7 @@ export function DeleteRecord() {
 					<Trash2 strokeWidth={"1.5px"} color="#f04343" />
 				</Button>
 			</DialogTrigger>
-			<DialogContent className="sm:max-w-[425px] rounded-2xl">
+			<DialogContent className="sm:max-w-[425px]">
 				<DialogHeader>
 					<DialogTitle>Удалить запись?</DialogTitle>
 				</DialogHeader>
