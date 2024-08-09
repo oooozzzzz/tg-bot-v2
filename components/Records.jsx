@@ -1,10 +1,6 @@
 "use client";
 
-import {
-	data,
-	deleteRecordReq,
-	getCategories,
-} from "@/services";
+import { data, deleteRecordReq, getCategories } from "@/services";
 import RecordItem from "./RecordItem";
 import { useEffect, useState } from "react";
 import Script from "next/script";
@@ -35,15 +31,9 @@ function Records() {
 			const user = tg.initDataUnsafe.user;
 			console.log(user);
 			setUser(user);
+		} catch (error) {}
 
-		} catch (error) {
-			
-		}
-	
-			try {
-				getCategories(user.id).then(setCategories);
-			} catch (error) {}
-
+		getCategories(user.id).then(setCategories);
 	}, []);
 	return (
 		<>
