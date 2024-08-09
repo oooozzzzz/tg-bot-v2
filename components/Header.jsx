@@ -6,7 +6,7 @@ function Header() {
 
 const links = [
 	{label: "Записи", href: "/records" },
-	{label: "Аналитика", href: "/analytics" },
+	{label: "Аналитика", href: "/" },
 ]
 
 	return (

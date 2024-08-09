@@ -42,7 +42,7 @@ function Records() {
 		try {
 			getCategories(userId).then(setCategories);
 		} catch (error) {}
-	}, [categories]);
+	}, []);
 	return (
 		<>
 			<Script
