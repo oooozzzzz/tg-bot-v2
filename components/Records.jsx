@@ -7,7 +7,7 @@ import Script from "next/script";
 
 function Records() {
 	const [categories, setCategories] = useState([]);
-	const [user, setUser] = useState();
+	const [user, setUser] = useState(1);
 
 	const deleteRecord = ({ recordId, categoryId }) => {
 		console.log("Record id ", recordId, "Category Id", categoryId);
