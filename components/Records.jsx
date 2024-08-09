@@ -4,8 +4,6 @@ import {
 	data,
 	deleteRecordReq,
 	getCategories,
-	params,
-	useTelergam,
 } from "@/services";
 import RecordItem from "./RecordItem";
 import { useEffect, useState } from "react";
@@ -13,7 +11,7 @@ import Script from "next/script";
 
 function Records() {
 	const [categories, setCategories] = useState([]);
-	const [userId, setUserId] = useState();
+	const [user, setUser] = useState();
 
 	const deleteRecord = ({ recordId, categoryId }) => {
 		console.log("Record id ", recordId, "Category Id", categoryId);
@@ -36,14 +34,14 @@ function Records() {
 			console.log(tg);
 			const user = tg.initDataUnsafe.user;
 			console.log(user);
-			setUserId(user.id);
+			setUser(user);
 
 		} catch (error) {
 			
 		}
 	
 			try {
-				getCategories(userId).then(setCategories);
+				getCategories(user.id).then(setCategories);
 			} catch (error) {}
 
 	}, []);
