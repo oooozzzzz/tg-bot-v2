@@ -36,10 +36,11 @@ function Records() {
 		const user = tg?.initDataUnsafe?.user;
 		console.log(user);
 		setUserId(user?.id);
-
-		try {
-			getCategories(userId).then(setCategories);
-		} catch (error) {}
+		if (userId) {
+			try {
+				getCategories(userId).then(setCategories);
+			} catch (error) {}
+		}
 	}, []);
 	return (
 		<>
