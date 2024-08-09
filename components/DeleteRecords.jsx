@@ -11,8 +11,10 @@ import {
 } from "@/components/ui/dialog";
 import { Trash2 } from "lucide-react";
 
-export function DeleteRecord() {
-	
+export function DeleteRecord({ id, deleteRecord }) {
+	const onClick = () => {
+		deleteRecord(id);
+	}
 	return (
 		<Dialog>
 			<DialogTrigger asChild>
@@ -29,7 +31,7 @@ export function DeleteRecord() {
         </DialogDescription>
 				<DialogFooter>
 					<DialogClose asChild>
-						<Button variant="destructive">Удалить</Button>
+						<Button variant="destructive" onClick={onClick}>Удалить</Button>
 					</DialogClose>
 				</DialogFooter>
 			</DialogContent>
