@@ -31,13 +31,11 @@ function Records() {
 		});
 	};
 	useEffect(() => {
-		try {
-			const tg = window.Telegram.WebApp;
-			console.log(tg);
-			const user = tg.initDataUnsafe.user;
-			console.log(user);
-			setUserId(user.id);
-		} catch (error) {}
+		const tg = window?.Telegram?.WebApp;
+		console.log(tg);
+		const user = tg?.initDataUnsafe?.user;
+		console.log(user);
+		setUserId(user?.id);
 
 		try {
 			getCategories(userId).then(setCategories);
