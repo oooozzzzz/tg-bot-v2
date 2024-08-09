@@ -1,6 +1,6 @@
 "use client";
 
-import { data, deleteRecordReq, getCategories } from "@/services";
+import { deleteRecordReq, getCategories } from "@/services";
 import RecordItem from "./RecordItem";
 import { useEffect, useState } from "react";
 import Script from "next/script";
@@ -25,13 +25,10 @@ function Records() {
 		});
 	};
 	useEffect(() => {
-		try {
-			const tg = window.Telegram.WebApp;
-			console.log(tg);
-			const user = tg.initDataUnsafe.user;
-			console.log(user);
-			setUser(user);
-		} catch (error) {}
+		const tg = window.Telegram.WebApp;
+		const user = tg.initDataUnsafe?.user;
+		console.log(user);
+		setUser(user);
 
 		getCategories(user?.id).then(setCategories);
 	}, []);
