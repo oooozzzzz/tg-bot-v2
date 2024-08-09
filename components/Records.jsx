@@ -13,7 +13,7 @@ import Script from "next/script";
 
 function Records() {
 	const [categories, setCategories] = useState([]);
-	const [id, setId] = useState();
+	const [userId, setUserId] = useState();
 
 	const deleteRecord = ({ recordId, categoryId }) => {
 		console.log("Record id ", recordId, "Category Id", categoryId);
@@ -31,10 +31,13 @@ function Records() {
 		});
 	};
 	useEffect(() => {
-		const user = useTelergam();
-		setId(user?.id);
+		try {
+			const tg = window.Telegram.WebApp;
+			const user = tg.initDataUnsafe.user;
+			setUserId(user.id);
+		} catch (error) {}
 
-		if (id) {
+		if (userId) {
 			try {
 				getCategories(id).then(setCategories);
 			} catch (error) {}
