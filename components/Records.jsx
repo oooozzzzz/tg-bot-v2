@@ -31,16 +31,21 @@ function Records() {
 		});
 	};
 	useEffect(() => {
-		const tg = window?.Telegram?.WebApp;
-		console.log(tg);
-		const user = tg?.initDataUnsafe?.user;
-		console.log(user);
-		setUserId(user?.id);
-		if (userId) {
+		try {
+			const tg = window.Telegram.WebApp;
+			console.log(tg);
+			const user = tg.initDataUnsafe.user;
+			console.log(user);
+			setUserId(user.id);
+
+		} catch (error) {
+			
+		}
+	
 			try {
 				getCategories(userId).then(setCategories);
 			} catch (error) {}
-		}
+
 	}, []);
 	return (
 		<>
