@@ -11,9 +11,9 @@ import {
 } from "@/components/ui/dialog";
 import { Trash2 } from "lucide-react";
 
-export function DeleteRecord({ id, deleteRecord }) {
+export function DeleteRecord({ categoryId, recordId, deleteRecord }) {
 	const onClick = () => {
-		deleteRecord(id);
+		deleteRecord({ categoryId, recordId});
 	}
 	return (
 		<Dialog>
