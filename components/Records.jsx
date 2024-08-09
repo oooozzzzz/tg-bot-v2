@@ -12,7 +12,7 @@ import { useEffect, useState } from "react";
 
 function Records() {
 	const [categories, setCategories] = useState([]);
-	const [id, setId] = useState(762569950);
+	const [id, setId] = useState();
 
 	const deleteRecord = ({ recordId, categoryId }) => {
 		console.log("Record id ", recordId, "Category Id", categoryId);
