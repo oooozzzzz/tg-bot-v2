@@ -1,3 +1,5 @@
+import axios from "axios";
+
 export const data = [
 	{
 		id: "1a1f0952-a094-4f23-8a62-92907d5c628a",
@@ -105,3 +107,21 @@ export const data = [
 		],
 	},
 ];
+
+export const params = {
+	headers: { "ngrok-skip-browser-warning": "69420" },
+};
+
+export const getCategories = async (id) => {
+	const res = await axios.get(
+		`https://e540-62-118-92-35.ngrok-free.app/records?id=${id}`,
+		params
+	);
+	return res.data;
+};
+
+export const useTelergam = () => {
+	const tg = window?.Telegram?.WebApp;
+	const user = tg?.initDataUnsafe?.user;
+	return user;
+};

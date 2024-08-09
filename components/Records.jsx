@@ -1,35 +1,53 @@
 "use client";
 
-import { data } from "@/services";
+import { data, getCategories, params, useTelergam } from "@/services";
 import RecordItem from "./RecordItem";
 import { useEffect, useState } from "react";
-import axios from "axios";
+import NoRecords from "./NoRecords";
 
 function Records() {
 	const [categories, setCategories] = useState([]);
 	const [id, setId] = useState(762569950);
 
 	useEffect(() => {
-		// axios
-			// .get(`https://5b6e-62-118-92-74.ngrok-free.app/records?id=762569950`)
-			// .then((res) => setCategories(res.data));
-		setCategories(data);
+		const user = useTelergam()
+		setId(user?.id);
+		
+		if (id) {
+			try {
+				getCategories(id).then(setCategories);
+			} catch (error) {}
+		}
 	}, []);
 	return (
-		<div className=" z-10 w-full items-center justify-between text-sm lg:flex">
-			{categories.map((category) => {
-				return (
-					<div className="w-full capitalize p-2 mt-5 border-b-2 last:border-0">
-						<h2 className="flex items-center justify-center text-4xl font-light  border-white py-1">{category.label}</h2>
-						<div>
-							{category.records.map((record) => (
-								<RecordItem key={record.id} amount={record.amount} />
-							))}
+		<div className=" z-10 w-full font-light overflow-y-hidden items-center justify-between text-sm lg:flex">
+			{categories.length > 0 ? (
+				categories.map((category) => {
+					return (
+						<div className="w-full capitalize p-2 mt-5 border-b-2 last:border-0">
+							<h2 className="flex items-center justify-center text-4xl font-light  border-white py-1">
+								{category.label}
+							</h2>
+							<div>
+								{category.records.map((record) => {
+									return (
+										<RecordItem
+											key={record.id}
+											amount={record.amount}
+											id={record.id}
+										/>
+									);
+								})}
+								{!category.records.length ? (
+									<div className="text-lg normal-case ">Нет записей</div>
+								) : null}
+							</div>
 						</div>
-					</div>
-				);
-			})}
-		
+					);
+				})
+			) : (
+				<NoRecords />
+			)}
 		</div>
 	);
 }

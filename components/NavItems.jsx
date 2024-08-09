@@ -8,10 +8,10 @@ function NavItems({ links }) {
 	const pathname = usePathname();
 	return (
 		<>
-			<div className="flex gap-28">
+			<div className="flex">
 				{links.map(({ label, href }) => {
 					const isActive = pathname === href;
-					return <Link href={href} key={href} className={`${isActive ? "border-b border-slate-200" : ""} `}>{label}</Link>;
+					return <Link href={href} key={href} className={`${isActive ? "text-white" : ""} text-gray-400 mx-5`}>{label}</Link>;
 				})}
 			</div>
 		</>

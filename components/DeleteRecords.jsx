@@ -12,6 +12,7 @@ import {
 import { Trash2 } from "lucide-react";
 
 export function DeleteRecord() {
+	
 	return (
 		<Dialog>
 			<DialogTrigger asChild>

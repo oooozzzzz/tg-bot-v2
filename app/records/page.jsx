@@ -1,11 +1,13 @@
-import React from 'react'
+import React from "react";
 import Records from "@/components/Records";
+import Script from "next/script";
 function page() {
 	return (
 		<>
-		<Records/>
+
+			<Records />
 		</>
-	)
+	);
 }
 
-export default page
+export default page;
