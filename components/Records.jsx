@@ -33,15 +33,15 @@ function Records() {
 	useEffect(() => {
 		try {
 			const tg = window.Telegram.WebApp;
+			console.log(tg);
 			const user = tg.initDataUnsafe.user;
+			console.log(user);
 			setUserId(user.id);
 		} catch (error) {}
 
-		if (userId) {
-			try {
-				getCategories(id).then(setCategories);
-			} catch (error) {}
-		}
+		try {
+			getCategories(userId).then(setCategories);
+		} catch (error) {}
 	}, [categories]);
 	return (
 		<>
