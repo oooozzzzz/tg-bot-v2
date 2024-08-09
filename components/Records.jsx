@@ -33,7 +33,7 @@ function Records() {
 			setUser(user);
 		} catch (error) {}
 
-		getCategories(user.id).then(setCategories);
+		getCategories(user?.id).then(setCategories);
 	}, []);
 	return (
 		<>
