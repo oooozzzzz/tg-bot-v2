@@ -26,9 +26,8 @@ function Records() {
 	};
 	useEffect(() => {
 		const tg = window.Telegram.WebApp;
-		const user = tg.initDataUnsafe?.user;
-		console.log(user);
-		setUser(user);
+		const tgUser = tg.initDataUnsafe?.user;
+		setUser(tgUser);
 
 		getCategories(user?.id).then(setCategories);
 	}, []);

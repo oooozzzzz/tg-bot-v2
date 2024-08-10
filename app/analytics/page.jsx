@@ -9,7 +9,7 @@ function Analytics() {
 				src="https://telegram.org/js/telegram-web-app.js"
 				strategy="beforeInteractive"
 			/>
-		<div> Analytics</div>
+		<div>Analytics</div>
 		</>
 	)
 }
