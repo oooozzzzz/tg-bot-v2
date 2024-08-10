@@ -24,10 +24,11 @@ function Records() {
 		});
 	};
 	useEffect(() => {
-		const tg = window.Telegram.WebApp;
-		const user = tg.initDataUnsafe?.user;
+		// const tg = window.Telegram.WebApp;
+		// const user = tg.initDataUnsafe?.user;
 		
-		getCategories(user?.id).then(setCategories);
+		//TODO: change 762569950 to your user.id before commit
+		getCategories(762569950).then(setCategories); 
 	}, []);
 	return (
 		<>
@@ -35,10 +36,10 @@ function Records() {
 				src="https://telegram.org/js/telegram-web-app.js"
 				strategy="beforeInteractive"
 			/>
-			<div className=" z-10 w-full font-light overflow-y-hidden items-center justify-between text-sm lg:flex">
+			<div className=" z-10 w-full font-light flex flex-col text-sm">
 				{categories.map((category) => {
 					return (
-						<div className="w-full capitalize p-2 mt-5 border-b-2 last:border-0">
+						<div className="w-full capitalize mb-2 border-b-2 last:border-0">
 							<h2 className="flex items-center justify-center text-4xl font-light  border-white py-1">
 								{category.label}
 							</h2>

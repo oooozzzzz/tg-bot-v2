@@ -13,6 +13,14 @@ export const getCategories = async (id) => {
 	return res.data;
 };
 
+export const getRecords = async (id) => {
+	const res = await axios.get(
+		`${URL}/records/by_date?id=${id}`,
+		{ headers: ngrokHeaders }
+	);
+	return res.data;
+}
+
 export const deleteRecordReq = async (recordId) => {
 	const res = await axios.delete(
 		`${URL}/records?id=${recordId}`,

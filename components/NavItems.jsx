@@ -10,7 +10,7 @@ function NavItems({ links }) {
 		<>
 			<div className="flex">
 				{links.map(({ label, href }) => {
-					const isActive = pathname === href;
+					const isActive = `/${pathname.split('/')[1]}` == href;
 					return <Link href={href} key={href} className={`${isActive ? "text-white" : ""} text-gray-400 mx-5`}>{label}</Link>;
 				})}
 			</div>

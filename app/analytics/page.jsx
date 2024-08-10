@@ -1,8 +1,30 @@
 "use client"
+import { getRecords } from '@/services';
 import Script from 'next/script'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 function Analytics() {
+	// const [categories, setCategories] = useState([]);
+
+	// 	{category?.records?.map((record) => {
+	// 								return (
+	// 									<RecordItem
+	// 										key={record.id}
+	// 										amount={record.amount}
+	// 										recordId={record.id}
+	// 										categoryId={record.categoryId}
+	// 										deleteRecord={deleteRecord}
+	// 									/>
+	// 								);
+	// 							})}
+
+
+	// useEffect(() => {
+	// 	const tg = window.Telegram.WebApp;
+	// 	const user = tg.initDataUnsafe?.user;
+		
+	// 	getRecords(762569950).then(setCategories);
+	// }, []);
 	return (
 		<>
 			<Script
