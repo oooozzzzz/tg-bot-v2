@@ -22,7 +22,7 @@ export default function RootLayout({ children }) {
 					disableTransitionOnChange
 				>
 					<Header />
-					<main className="flex scroll-smooth min-h-screen container flex-col items-center justify-between py-24">
+					<main className="flex scroll-smooth min-h-screen flex-col items-center justify-between py-24">
 						{children}
 					</main>
 					<Footer />
