@@ -21,8 +21,3 @@ export const deleteRecordReq = async (recordId) => {
 	return res.data;
 }
 
-export const useTelergam = () => {
-	const tg = window?.Telegram?.WebApp;
-	const user = tg?.initDataUnsafe?.user;
-	return user;
-};
