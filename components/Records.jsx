@@ -24,11 +24,11 @@ function Records() {
 		});
 	};
 	useEffect(() => {
-		// const tg = window.Telegram.WebApp;
-		// const user = tg.initDataUnsafe?.user;
+		const tg = window.Telegram.WebApp;
+		const user = tg.initDataUnsafe?.user;
 		
 		//TODO: change 762569950 to your user.id before commit
-		getCategories(762569950).then(setCategories); 
+		getCategories(user?.id).then(setCategories); 
 	}, []);
 	return (
 		<>
