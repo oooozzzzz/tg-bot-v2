@@ -31,7 +31,7 @@ function Analytics() {
 				src="https://telegram.org/js/telegram-web-app.js"
 				strategy="beforeInteractive"
 			/>
-		<div>Analytics</div>
+		<h2 className='py-2 font-light'>В разработке..</h2>
 		</>
 	)
 }
