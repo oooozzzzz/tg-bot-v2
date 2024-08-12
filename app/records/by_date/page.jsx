@@ -16,11 +16,11 @@ function ByDate() {
 	};
 
 	useEffect(() => {
-		// const tg = window.Telegram.WebApp;
-		// const user = tg.initDataUnsafe?.user;
+		const tg = window.Telegram.WebApp;
+		const user = tg.initDataUnsafe?.user;
 
 		//TODO: change 762569950 to your user.id before commit
-		getRecords(762569950).then(setRecords);
+		getRecords(user.id).then(setRecords);
 	}, []);
 	return (
 		<div className="pt-3">
