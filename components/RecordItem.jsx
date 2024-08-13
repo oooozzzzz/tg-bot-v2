@@ -19,7 +19,7 @@ function RecordItem({
 			) : (
 				<span className="italic font-">{comment}</span>
 			)}
-			<span>{createdAt}</span>
+			<span className="font-light text-base">{createdAt}</span>
 			<DeleteRecord
 				deleteRecord={deleteRecord}
 				recordId={recordId}

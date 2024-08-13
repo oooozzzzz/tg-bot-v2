@@ -50,6 +50,7 @@ function Records() {
 											key={record.id}
 											amount={record.amount}
 											recordId={record.id}
+											comment={record.comment}
 											categoryId={record.categoryId}
 											deleteRecord={deleteRecord}
 										/>
