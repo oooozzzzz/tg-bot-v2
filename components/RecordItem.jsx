@@ -17,9 +17,11 @@ function RecordItem({
 				{categoryLabel ? (
 					<span className="font-light text-base">{categoryLabel}</span>
 				) : (
-					<div className="mx-3 flex items-center justify-center w-full text-base border rounded-md bg-gray-400/20">
-						<span className="p-1 text-sm">{comment}</span>
-					</div>
+					comment && (
+						<div className="mx-3 flex items-center justify-center w-full text-base border rounded-md bg-gray-400/20">
+							<span className="p-1 text-sm normal-case">{comment}</span>
+						</div>
+					)
 				)}
 
 				<DeleteRecord
