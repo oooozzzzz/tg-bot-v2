@@ -18,7 +18,7 @@ function RecordItem({
 					<span className="font-light text-base">{categoryLabel}</span>
 				) : (
 					comment && (
-						<div className="mx-3 flex items-center justify-center w-full text-base border rounded-md bg-gray-400/20">
+						<div className="ml-3 flex items-center justify-center w-full text-base border rounded-md bg-gray-400/20">
 							<span className="p-1 text-sm normal-case">{comment}</span>
 						</div>
 					)
