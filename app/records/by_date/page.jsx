@@ -46,6 +46,7 @@ function ByDate() {
 						<RecordItem
 							key={record.id}
 							amount={record.amount}
+							comment={record.comment}
 							recordId={record.id}
 							createdAt={createdAtMoment}
 							categoryLabel={record.categoryLabel}
