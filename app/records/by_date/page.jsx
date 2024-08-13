@@ -24,6 +24,7 @@ function ByDate() {
 		//TODO: change 762569950 to your user.id before commit
 		getRecords(user?.id).then(setRecords);
 	}, []);
+	moment.locale("ru");
 	return (
 		<>
 			<div className="pt-3">
@@ -32,7 +33,7 @@ function ByDate() {
 						.calendar(null, {
 							sameDay: "[Сегодня]",
 							lastDay: "[Вчера]",
-							sameElse: "DD/MM/YYYY",
+							sameElse: "D/MMM",
 						});
 					return (
 						<RecordItem
