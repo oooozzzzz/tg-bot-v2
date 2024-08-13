@@ -1,6 +1,5 @@
 import React from "react";
 import { DeleteRecord } from "./DeleteRecords";
-import moment from "moment";
 
 function RecordItem({
 	amount,
@@ -18,7 +17,7 @@ function RecordItem({
 				{categoryLabel ? (
 					<span className="font-light text-base">{categoryLabel}</span>
 				) : (
-					<span className="italic font-">{comment}</span>
+					<span className="italic normal-case">{comment}</span>
 				)}
 
 				<DeleteRecord
