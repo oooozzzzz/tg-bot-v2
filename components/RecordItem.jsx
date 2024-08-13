@@ -27,7 +27,7 @@ function RecordItem({
 					categoryId={categoryId}
 				/>
 			</div>
-			<div>
+			<div className="flex w-full justify-start ml-5">
 				{createdAt ? (
 					<span className="font-light text-base">{createdAt}</span>
 				) : null}
