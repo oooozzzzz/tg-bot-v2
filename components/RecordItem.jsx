@@ -11,13 +11,13 @@ function RecordItem({
 	createdAt,
 }) {
 	return (
-		<div className="w-full bg-gray-500/10 text-xl font-extralight my-3 p-2 flex flex-col items-center border-gray-400/70 rounded-xl border">
+		<div className="w-full bg-gray-500/10 text-xl font-extralight my-3 p-1 flex flex-col items-center border-gray-400/70 rounded-xl border">
 			<div className="flex justify-between items-center w-full">
-				<span className="font-light pl-3">{amount}</span>
+				<span className="font-light text-base pl-2">{amount}</span>
 				{categoryLabel ? (
 					<span className="font-light text-base">{categoryLabel}</span>
 				) : (
-					<span className="italic normal-case p-2">{comment}</span>
+					<span className="italic normal-case text-sm p-2">{comment}</span>
 				)}
 
 				<DeleteRecord
@@ -32,7 +32,7 @@ function RecordItem({
 				) : null}
 				{categoryLabel && comment && (
 					<div className="mx-7 flex items-center justify-center w-full text-base border rounded-md bg-gray-400/20">
-						<span className="p-1">{comment}</span>
+						<span className="p-1 text-sm">{comment}</span>
 					</div>
 				)}
 			</div>

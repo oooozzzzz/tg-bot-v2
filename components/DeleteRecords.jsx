@@ -19,7 +19,7 @@ export function DeleteRecord({ categoryId, recordId, deleteRecord }) {
 		<Dialog>
 			<DialogTrigger asChild>
 				<Button variant="icon">
-					<Trash2 strokeWidth={"1.5px"} color="#f04343" />
+					<Trash2 strokeWidth={"1.5px"} color="#f04343" className=""/>
 				</Button>
 			</DialogTrigger>
 			<DialogContent className="sm:max-w-[425px]">
@@ -27,7 +27,7 @@ export function DeleteRecord({ categoryId, recordId, deleteRecord }) {
 					<DialogTitle>Удалить запись?</DialogTitle>
 				</DialogHeader>
 				<DialogDescription>
-          Вы уверены, что хотите удалить эту запись? Это действие нельзя отменить.
+          Вы уверены, что хотите удалить запись? Это действие нельзя отменить.
         </DialogDescription>
 				<DialogFooter>
 					<DialogClose asChild>

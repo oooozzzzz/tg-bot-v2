@@ -40,9 +40,9 @@ function Records() {
 				{categories.map((category) => {
 					return (
 						<div className="w-full capitalize mb-2 border-b-2 last:border-0">
-							<h2 className="flex items-center justify-center text-4xl font-light  border-white py-1">
+							<h3 className="flex items-center justify-center text-2xl font-light  border-white py-1">
 								{category.label}
-							</h2>
+							</h3>
 							<div>
 								{category?.records?.map((record) => {
 									return (
