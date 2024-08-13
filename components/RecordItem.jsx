@@ -17,7 +17,7 @@ function RecordItem({
 				{categoryLabel ? (
 					<span className="font-light text-base">{categoryLabel}</span>
 				) : (
-					<span className="italic normal-case">{comment}</span>
+					<span className="italic normal-case p-2">{comment}</span>
 				)}
 
 				<DeleteRecord
@@ -30,8 +30,11 @@ function RecordItem({
 				{createdAt ? (
 					<span className="font-light text-base">{createdAt}</span>
 				) : null}
-				{categoryLabel && comment && <div className="mx-7 flex items-center justify-center w-full text-base border rounded-md bg-gray-400/20">
-					{comment}</div>}
+				{categoryLabel && comment && (
+					<div className="mx-7 flex items-center justify-center w-full text-base border rounded-md bg-gray-400/20">
+						<span className="p-1">{comment}</span>
+					</div>
+				)}
 			</div>
 		</div>
 	);
