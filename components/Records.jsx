@@ -26,9 +26,9 @@ function Records() {
 	useEffect(() => {
 		const tg = window.Telegram.WebApp;
 		const user = tg.initDataUnsafe?.user;
-		
+
 		//TODO: change 762569950 to your user.id before commit
-		getCategories(user?.id).then(setCategories); 
+		getCategories(user?.id).then(setCategories);
 	}, []);
 	return (
 		<>
@@ -39,8 +39,8 @@ function Records() {
 			<div className=" z-10 w-full font-light flex flex-col text-sm">
 				{categories.map((category) => {
 					return (
-						<div className="w-full capitalize mb-2 border-b-2 last:border-0">
-							<h3 className="flex items-center justify-center text-2xl font-light  border-white py-1">
+						<div className="w-full  mb-2 border-b-2 last:border-0">
+							<h3 className="flex items-center capitalize justify-center text-2xl font-light  border-white py-1">
 								{category.label}
 							</h3>
 							<div>
