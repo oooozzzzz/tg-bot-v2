@@ -19,7 +19,7 @@ export function DeleteRecord({ categoryId, recordId, deleteRecord }) {
 		<Dialog>
 			<DialogTrigger asChild>
 				<Button variant="icon">
-					<Trash2 strokeWidth={"1.5px"} color="#f04343" className="pr-4"/>
+					<Trash2 strokeWidth={"1.5px"} color="#f04343"/>
 				</Button>
 			</DialogTrigger>
 			<DialogContent className="sm:max-w-[425px]">
