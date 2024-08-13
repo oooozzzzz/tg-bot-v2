@@ -19,7 +19,9 @@ function RecordItem({
 			) : (
 				<span className="italic font-">{comment}</span>
 			)}
-			<span className="font-light text-base">{createdAt}</span>
+			{createdAt ? (
+				<span className="font-light text-base">{createdAt}</span>
+			) : null}
 			<DeleteRecord
 				deleteRecord={deleteRecord}
 				recordId={recordId}
