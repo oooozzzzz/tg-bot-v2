@@ -18,7 +18,7 @@ export function DeleteRecord({ categoryId, recordId, deleteRecord }) {
 	return (
 		<Dialog>
 			<DialogTrigger asChild>
-				<Button variant="icon">
+				<Button variant="icon" className="px-3">
 					<Trash2 strokeWidth={"1.5px"} color="#f04343"/>
 				</Button>
 			</DialogTrigger>
