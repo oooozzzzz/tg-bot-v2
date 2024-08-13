@@ -31,7 +31,7 @@ function RecordItem({
 				{createdAt ? (
 					<span className="font-light text-base">{createdAt}</span>
 				) : null}
-				{categoryLabel && <div className="mx-7 flex items-center justify-center w-full text-base border rounded-md bg-gray-400/20">
+				{categoryLabel && comment && <div className="mx-7 flex items-center justify-center w-full text-base border rounded-md bg-gray-400/20">
 					{comment}</div>}
 			</div>
 		</div>
