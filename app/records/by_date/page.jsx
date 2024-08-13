@@ -2,14 +2,16 @@
 import RecordItem from "@/components/RecordItem";
 import { deleteRecordReq, getRecords } from "@/services";
 import React, { useState, useEffect } from "react";
+import moment from "moment";
+import Script from "next/script";
 
 function ByDate() {
 	const [records, setRecords] = useState([]);
 
-	const deleteRecord = ({ recordId}) => {
+	const deleteRecord = ({ recordId }) => {
 		deleteRecordReq(recordId).then(() => {
 			let newRecords = structuredClone(records);
-			newRecords = newRecords.filter((record) => record.id!== recordId);
+			newRecords = newRecords.filter((record) => record.id !== recordId);
 			console.log(newRecords);
 			setRecords(newRecords);
 		});
@@ -23,20 +25,37 @@ function ByDate() {
 		getRecords(762569950).then(setRecords);
 	}, []);
 	return (
-		<div className="pt-3">
-			{records.map((record) => {
-				return (
-					<RecordItem
-						key={record.id}
-						amount={record.amount}
-						recordId={record.id}
-						categoryLabel={record.categoryLabel}
-						categoryId={record.categoryId}
-						deleteRecord={deleteRecord}
-					/>
-				);
-			})}
-		</div>
+		<>
+			{
+				//TODO: delete script before prod.
+			}
+
+			<Script
+				src="https://telegram.org/js/telegram-web-app.js"
+				strategy="beforeInteractive"
+			/>
+			<div className="pt-3">
+				{records.map((record) => {
+					const createdAtMoment = moment(record.createdAt)
+						.calendar(null, {
+							sameDay: "[Сегодня]",
+							lastDay: "[Вчера]",
+							sameElse: "DD/MM/YYYY",
+						});
+					return (
+						<RecordItem
+							key={record.id}
+							amount={record.amount}
+							recordId={record.id}
+							createdAt={createdAtMoment}
+							categoryLabel={record.categoryLabel}
+							categoryId={record.categoryId}
+							deleteRecord={deleteRecord}
+						/>
+					);
+				})}
+			</div>
+		</>
 	);
 }
 
