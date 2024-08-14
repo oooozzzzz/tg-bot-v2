@@ -1,39 +1,27 @@
-"use client"
-import { getRecords } from '@/services';
-import Script from 'next/script'
-import React, { useEffect, useState } from 'react'
+"use client";
+import PieChart from "@/components/PieChart";
+import { getCategories, getRecords, makeData } from "@/services";
+import Script from "next/script";
+import React, { useEffect, useState } from "react";
 
 function Analytics() {
-	// const [categories, setCategories] = useState([]);
-
-	// 	{category?.records?.map((record) => {
-	// 								return (
-	// 									<RecordItem
-	// 										key={record.id}
-	// 										amount={record.amount}
-	// 										recordId={record.id}
-	// 										categoryId={record.categoryId}
-	// 										deleteRecord={deleteRecord}
-	// 									/>
-	// 								);
-	// 							})}
+	const [records, setRecords] = useState([]);
 
 
-	// useEffect(() => {
-	// 	const tg = window.Telegram.WebApp;
-	// 	const user = tg.initDataUnsafe?.user;
-		
-	// 	getRecords(762569950).then(setCategories);
-	// }, []);
+	useEffect(() => {
+		const tg = window.Telegram.WebApp;
+		const user = tg.initDataUnsafe?.user;
+		getRecords(user?.id).then(setRecords);
+	}, []);
 	return (
 		<>
 			<Script
 				src="https://telegram.org/js/telegram-web-app.js"
 				strategy="beforeInteractive"
 			/>
-		<h2 className='py-2 font-light'>В разработке..</h2>
+			<PieChart records={records} />
 		</>
-	)
+	);
 }
 
-export default Analytics
+export default Analytics;
