@@ -61,7 +61,7 @@ export const makePieData = (records) => {
 				],
 				borderColor: "rgba(0, 0, 0, 0.574)",
 				data: fields,
-				hoverOffset: 2,
+				hoverOffset: 6,
 			},
 		],
 	};
