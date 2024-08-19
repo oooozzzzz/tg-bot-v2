@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const ngrokHeaders = { "ngrok-skip-browser-warning": "69420" };
 
-const URL = "https://e13a-62-118-92-13.ngrok-free.app";
+const URL = "https://a5cd-62-118-92-35.ngrok-free.app";
 export const getCategories = async (id) => {
 	console.log("getCategories", id);
 	const res = await axios.get(`${URL}/records?id=${id}`, {
